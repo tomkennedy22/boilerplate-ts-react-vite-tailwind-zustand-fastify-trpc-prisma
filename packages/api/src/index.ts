@@ -6,8 +6,9 @@ import {
 import { initTRPC, inferProcedureOutput } from "@trpc/server";
 import { z } from "zod";
 // import { mutations } from "./_mutations";
+import { generateOpenApiDocument, OpenApiMeta } from "trpc-to-openapi";
 
-const t = initTRPC.create();
+const t = initTRPC.meta<OpenApiMeta>().create();
 
 export const router = t.router;
 export const publicProcedure = t.procedure;
@@ -15,10 +16,19 @@ export const publicProcedure = t.procedure;
 const prisma = extendedPrismaClient;
 
 export const appRouter = router({
-  greeting: publicProcedure.query(() => {
-    console.log("In greeting");
-    return { message: "Hello, world!" };
-  }),
+  greeting: publicProcedure
+    .meta({ openapi: { method: "GET", path: "/greeting" } })
+    .input(z.object({ name: z.string() }))
+    .query(({ input }) => {
+      console.log("In greeting");
+      return { message: `Hello, ${input.name}!` };
+    }),
+});
+
+export const openApiDocument = generateOpenApiDocument(appRouter, {
+  title: "tRPC OpenAPI",
+  version: "1.0.0",
+  baseUrl: "http://localhost:8118",
 });
 
 type ConvertDatesToStrings<T> = {

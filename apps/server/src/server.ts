@@ -9,6 +9,7 @@ import {
   appRouter,
   type AppRouter,
 } from "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/api";
+import { generateOpenApiDocument } from "trpc-to-openapi";
 
 const server = fastify({
   maxParamLength: 5000,
@@ -49,6 +50,12 @@ server.register(fastifyTRPCPlugin, {
       console.error(`Error in tRPC handler on path '${path}':`, error);
     },
   } satisfies FastifyTRPCPluginOptions<AppRouter>["trpcOptions"],
+});
+
+export const openApiDocument = generateOpenApiDocument(appRouter, {
+  title: "tRPC OpenAPI",
+  version: "1.0.0",
+  baseUrl: "http://localhost:8118",
 });
 
 (async () => {
