@@ -1,0 +1,53 @@
+{
+  "name": "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/system": "^2.2.6",
+    "@nextui-org/theme": "^2.2.11",
+    "@phosphor-icons/react": "^2.1.7",
+    "@tanstack/react-query": "^5.59.15",
+    "@tanstack/react-query-devtools": "^5.59.15",
+    "@tanstack/react-table": "^8.20.5",
+    "@trpc/client": "11.0.0-rc.553",
+    "@trpc/next": "11.0.0-rc.553",
+    "@trpc/react-query": "11.0.0-rc.553",
+    "@trpc/server": "11.0.0-rc.553",
+    "framer-motion": "11.11.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.27.0",
+    "react-toastify": "^10.0.6",
+    "trpc-transformer": "^3.2.2",
+    "zustand": "5.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.12.0",
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/api": "workspace:*",
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/db": "workspace:*",
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/typescript-config": "workspace:*",
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/utils": "workspace:*",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "4.3.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "9.12.0",
+    "eslint-plugin-react-hooks": "5.1.0-rc-fb9a90fa48-20240614",
+    "eslint-plugin-react-refresh": "^0.4.13",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "3.4.13",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "8.8.1",
+    "vite": "^5.4.8"
+  }
+}

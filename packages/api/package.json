@@ -1,0 +1,24 @@
+{
+  "name": "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/db": "workspace:*",
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/typescript-config": "workspace:*",
+    "@boilerplate-ts-turborepo-react-vite-tailwind-zustand-fastify-trpc-prisma/utils": "workspace:*",
+    "@trpc/server": "11.0.0-rc.553",
+    "events": "^3.3.0",
+    "superjson": "^2.2.1",
+    "trpc-transformer": "^3.2.2",
+    "zod": "^3.23.8"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
